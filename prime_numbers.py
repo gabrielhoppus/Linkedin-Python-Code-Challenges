@@ -5,15 +5,15 @@ Those are all prime numbers. And if you multiply them together, their product is
 should return a list with just a single value, that prime number."""
 
 
-primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31]
-factor_list = []
+
 
 def primeFactor(n):
-    i = 0 #the position in the primes list 0 = 2, 1 = 3 and so on
-    while (n / primes[i] >= 1): #while the result of the factoration is less or equal to 1, continue:
-        if (n % primes[i] == 0): #if the remainder of the division is equal to zero, add the number to the list and update the dividend
-            factor_list.append(primes[i])
-            n = n/primes[i]
+    factor_list = []
+    i = 2 #the divisor that will start the factoration
+    while (n / i >= 1): #while the result of the factoration is more or equal to 1, continue:
+        if (n % i == 0): #if the remainder of the division is equal to zero, add the number to the list and update the dividend
+            factor_list.append(i)
+            n = n/i
         else: #if the remainder isn't equal to 0, increment to the next item on the list
             i +=1     
     return factor_list #return the list with factors
